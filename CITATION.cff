@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use SwiftASR, cite this software and the upstream model papers listed in ACKNOWLEDGEMENTS.md."
+title: "SwiftASR"
+type: software
+authors:
+  - name: "Qauker"
+version: 0.1.0
+date-released: 2026-08-09
+url: "https://github.com/bigboyq/SwiftASR"
+repository-code: "https://github.com/bigboyq/SwiftASR"
+license: Apache-2.0
+keywords:
+  - speech recognition
+  - speaker diarization
+  - macOS
+  - Swift
+  - FunASR

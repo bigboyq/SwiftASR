@@ -1,0 +1,10 @@
+SwiftASR
+Copyright 2026 Qauker
+
+This product includes or is informed by software developed by the FunASR
+project and uses ONNX Runtime. The application can bundle model artifacts from
+the FunASR and 3D-Speaker ecosystems. See THIRD_PARTY_NOTICES.md,
+MODEL_LICENSES.md, and ACKNOWLEDGEMENTS.md for complete attribution.
+
+SwiftASR is an independent project. It is not affiliated with or endorsed by
+Alibaba Group, ModelScope, Microsoft, Apple, or Google.
