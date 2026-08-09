@@ -19,6 +19,18 @@ SwiftASR 是面向 macOS 的本地音频转写与说话人识别应用。音频�
 - 可选 Gemini 润色，导出内容严格跟随当前预览
 - 全部任务数据、设置与日志默认保存在本机
 
+## 性能与识别效果
+
+在 M1 Pro 的项目实测中，一段 10 分钟音频完成 VAD、ASR、标点恢复和说话人处理的
+端到端耗时为 `14.97 秒`（RTF `0.0249`，约 40 倍实时）；按相同负载线性折算，
+1 小时音频约需 `90 秒`。实际速度会随录音长度、说话人数、音质、温度、后台负载和
+系统版本变化。
+
+在收音清晰、以普通话为主且领域匹配的项目样本中，人工抽查的文字正确率多数可达
+90% 以上。这个数字是项目场景中的经验值，不是公开测试集上的统一 CER/WER，也不代表
+所有口音、噪声、重叠说话或专业术语场景。配置 Gemini API Key 后，可在结果页调用
+Gemini 自动精修转写文本；只有文本、说话人标签和术语提示会发送给 Gemini，不会上传音频。
+
 ## 安装
 
 1. 从 [Releases](https://github.com/bigboyq/SwiftASR/releases) 下载最新 DMG。
@@ -98,6 +110,22 @@ or later. Release builds are ad-hoc signed and are not yet notarized by Apple.
 - Structured `result.json`, manual segment editing, and speaker naming
 - Optional Gemini cleanup and preview-faithful text export
 - Local-first storage for jobs, settings, speaker profiles, and logs
+
+### Performance and recognition quality
+
+In a project benchmark on an M1 Pro, the complete VAD, ASR, punctuation, and
+speaker pipeline processed a 10-minute recording in `14.97 seconds` (RTF
+`0.0249`, about 40× real time). At the same sustained rate, one hour of audio
+would take roughly `90 seconds`. Actual speed varies with duration, speaker
+count, recording quality, thermals, background load, and OS version.
+
+For clear, primarily Mandarin recordings that match the model domain, manual
+reviews of project samples have usually found more than 90% of the text correct.
+This is an observed project figure, not a standardized benchmark-set CER/WER or
+a guarantee for every accent, noisy recording, overlap, or specialist vocabulary.
+After a Gemini API key is configured, Results can invoke Gemini to automatically
+polish the transcript. Text, speaker labels, and glossary hints are sent; audio
+remains local.
 
 Download the latest DMG from [Releases](https://github.com/bigboyq/SwiftASR/releases).
 See the [English help](docs/HELP.en.md) for installation, usage, privacy, and

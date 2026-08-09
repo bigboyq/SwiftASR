@@ -9,6 +9,21 @@
 
 Intel Macs are not currently supported.
 
+## Performance and quality notes
+
+The project's end-to-end M1 Pro benchmark processed a 10-minute recording in
+`14.97 seconds`, an RTF of `0.0249` or about 40× real time. At the same sustained
+rate, one hour of audio would take roughly `90 seconds`. Actual time depends on
+audio duration, speaker count, recording quality, thermals, background load, and
+the macOS version.
+
+For clear Mandarin recordings that match the model domain, manual review of
+project samples has usually found more than 90% of the text correct. This is not
+a standardized benchmark-set CER/WER and is not a guarantee for every accent,
+noisy recording, overlapping speech, or specialist vocabulary. Gemini cleanup
+may improve punctuation, segmentation, and wording, but important content still
+requires human review.
+
 ## Install and open the app
 
 1. Download `SwiftASR-<version>-<build>.dmg` from GitHub Releases.
